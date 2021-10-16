@@ -1,0 +1,115 @@
+$borderRadius5: 5px;
+$borderRadius10: 10px;
+$boxShadow: 0 0 10px rgb(148, 147, 147);
+$cardWidth: 450px;
+$cardHeight: 500px;
+$headingFontSize: 50px;
+$inputBorder: 0.5px solid rgb(150, 150, 150);
+$inputBorderRadius: 5px;
+$inputFontSize: 18px;
+$inputWidth: 350px;
+$inputHeight: 40px;
+$inputMarginBottom: 10px;
+$inputPaddingLeft: 15px;
+$whiteColor: white;
+$loginButtonFontSize: 20px;
+$loginButtonWidth: 350px;
+$loginButtonHeight: 40px;
+$themeColor: #4050b5;
+
+.main_div {
+  width: 100%;
+  height: 100vh;
+}
+
+.card {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+
+  width: $cardWidth;
+  height: $cardHeight;
+  border-radius: $borderRadius10;
+  box-shadow: $boxShadow;
+}
+
+.hr_line {
+  width: $loginButtonWidth;
+  color: rgb(151, 151, 151);
+}
+
+.heading_div {
+  display: block;
+  text-align: center;
+}
+
+.heading {
+  font-size: $headingFontSize;
+  margin-top: 30px;
+  color: $themeColor;
+}
+
+.input_form_div {
+  text-align: center;
+  margin-top: 30px;
+}
+.input {
+  width: $inputWidth;
+  height: $inputHeight;
+  font-size: $inputFontSize;
+  padding-left: $inputPaddingLeft;
+  margin-bottom: $inputMarginBottom;
+
+  border: $inputBorder;
+  border-radius: $inputBorderRadius;
+
+  &:focus {
+    outline-color: $themeColor;
+  }
+}
+
+.link_div {
+  text-align: end;
+  width: 400px;
+}
+.link {
+  margin-left: 2px;
+  text-decoration: none;
+  color: $themeColor;
+}
+.login_button {
+  width: $loginButtonWidth;
+  height: $loginButtonHeight;
+  font-size: $loginButtonFontSize;
+  margin-bottom: $inputMarginBottom;
+
+  background-color: $themeColor;
+  color: $whiteColor;
+
+  border: none;
+
+  border-radius: $borderRadius5;
+
+  &:hover {
+    background-color: #303e9c;
+  }
+}
+
+.main_div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.p {
+  color: rgb(109, 108, 108);
+}
+
+.input_error_p {
+  color: transparent;
+  white-space: pre-line;
+}
+
+//sass web-react/src/sass/landing.scss web-react/src/css/landing.module.css

@@ -1,0 +1,50 @@
+$themeColor: #4050b5;
+.body {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex: 1;
+  width: 100%;
+}
+.comment_form {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-left: 10px;
+  align-items: center;
+}
+.comment_input {
+  width: 100%;
+  border-radius: 20px;
+  height: 35px;
+  border: 1px solid black;
+  padding-left: 15px;
+  padding-top: 5px;
+  background-color: #eff2f5;
+  font-weight: lighter;
+  &:focus {
+    outline: none;
+  }
+  &::-webkit-input-placeholder {
+    font-weight: lighter;
+  }
+}
+.comment_button {
+  margin-left: 10px;
+  border-radius: 20px;
+  background-color: $themeColor;
+  color: white;
+  border: none;
+  padding: 0px 13px;
+  height: 30px;
+  font-weight: 500;
+
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    background-color: #303e9c;
+  }
+}
+//sass web-react/src/sass/newComment.scss web-react/src/css/newComment.module.css

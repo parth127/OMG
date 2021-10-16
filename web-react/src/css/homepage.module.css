@@ -1,0 +1,39 @@
+.body {
+  margin-top: 10px;
+}
+
+.container {
+  background-color: #eff2f5;
+  width: 100%;
+  min-width: 100vw;
+  min-height: 100vh;
+  height: 100%;
+}
+
+.sub_container {
+  height: 100%;
+}
+
+.right_component {
+  width: 100%;
+  height: 400px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 75px;
+}
+
+.feed_list_component {
+  z-index: 0;
+}
+
+.right_component_header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+}
+
+/*# sourceMappingURL=homepage.module.css.map */

@@ -1,0 +1,121 @@
+$borderRadius5: 5px;
+$borderRadius10: 10px;
+$boxShadow: 0 0 10px rgb(148, 147, 147);
+$cardWidth: 450px;
+$cardHeight: 410px;
+$headingFontSize: 40px;
+$inputBorder: 0.5px solid rgb(150, 150, 150);
+$inputBorderRadius: 5px;
+$inputFontSize: 18px;
+$inputWidth: 350px;
+$inputHeight: 40px;
+$inputMarginBottom: 20px;
+$inputPaddingLeft: 15px;
+$buttonFontSize: 20px;
+$buttonWidth: 350px;
+$buttonHeight: 40px;
+$themeColor: #4050b5;
+$whiteColor: white;
+
+.button {
+  width: $buttonWidth;
+  height: $buttonHeight;
+  font-size: $buttonFontSize;
+  margin-bottom: 20px;
+
+  background-color: $themeColor;
+  color: $whiteColor;
+
+  border: none;
+
+  border-radius: $borderRadius5;
+
+  &:hover {
+    background-color: #303e9c;
+  }
+}
+
+.card {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+
+  width: $cardWidth;
+  height: $cardHeight;
+  border-radius: $borderRadius10;
+  box-shadow: $boxShadow;
+}
+
+.heading_div {
+  display: block;
+  text-align: center;
+}
+
+.heading {
+  margin-top: 30px;
+  font-size: $headingFontSize;
+  color: $themeColor;
+  margin-bottom: -5px;
+}
+
+.hr_line {
+  width: 369px;
+  color: rgb(151, 151, 151);
+}
+
+.input_form_div {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.input {
+  width: $inputWidth;
+  height: $inputHeight;
+  font-size: $inputFontSize;
+  padding-left: $inputPaddingLeft;
+  margin-bottom: $inputMarginBottom;
+
+  border: $inputBorder;
+  border-radius: $borderRadius5;
+
+  &:focus {
+    outline-color: $themeColor;
+  }
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+}
+
+.link_div {
+  text-align: end;
+  width: 410px;
+}
+
+.link {
+  margin-left: 2px;
+  text-decoration: none;
+  color: $themeColor;
+}
+
+.main_div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.p {
+  color: rgb(109, 108, 108);
+  font-weight: lighter;
+}
+
+.input_error_p {
+  color: transparent;
+  white-space: pre-line;
+}
+
+//sass web-react/src/sass/forgot.scss web-react/src/css/forgot.module.css

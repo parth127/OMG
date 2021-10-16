@@ -1,0 +1,74 @@
+.button {
+  width: 350px;
+  height: 40px;
+  font-size: 20px;
+  background-color: #4050b5;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+.button:hover {
+  background-color: #303e9c;
+}
+
+.card {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 450px;
+  height: 600px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #949393;
+}
+
+.heading {
+  font-size: 50px;
+  color: #4050b5;
+}
+
+.heading_div {
+  display: block;
+  text-align: center;
+}
+
+.input_form_div {
+  text-align: center;
+  margin-top: 70px;
+}
+
+.input {
+  width: 350px;
+  height: 40px;
+  font-size: 18px;
+  padding-left: 15px;
+  margin-bottom: 20px;
+  border: 0.5px solid #969696;
+  border-radius: 5px;
+}
+.input:focus {
+  outline-color: #4050b5;
+}
+
+.logo {
+  width: 90px;
+  height: 90px;
+  margin-top: 30px;
+}
+
+.main_div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.terms {
+  text-align: left;
+  margin-left: 50px;
+  font-size: 14px;
+  color: #7c7c7c;
+}
+
+/*# sourceMappingURL=register.module.css.map */

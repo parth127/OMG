@@ -1,0 +1,150 @@
+$borderRadius10: 10px;
+$boxShadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+$backgroundColor: #eff2f5;
+$headerMarginTop: 10px;
+$themeColor: #4050b5;
+
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: $headerMarginTop;
+  background-color: white;
+  border-radius: $borderRadius10;
+  box-shadow: $boxShadow;
+  padding: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.header_left {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-left: 20px;
+}
+
+.header_search {
+  background-color: $backgroundColor;
+  border-radius: 999px;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 400px;
+  padding-left: 10px;
+  height: 40px;
+}
+
+.header_search:hover {
+  border: 2px solid $themeColor;
+}
+
+.header_search > input {
+  width: 350px;
+  outline: none;
+  background-color: transparent;
+  border: none;
+}
+
+.header_right {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex: 1;
+  margin-left: 50px;
+  align-items: center;
+}
+.header_rightOption {
+  margin-right: 20px;
+  padding: 10px 25px;
+}
+
+.header_rightOption-active > .MuiSvgIcon-root {
+  color: $themeColor;
+}
+
+.header_rightOption:hover {
+  border-radius: 10px;
+  background-color: $backgroundColor;
+  cursor: pointer;
+}
+.header_rightOption:hover > .MuiSvgIcon-root {
+  color: $themeColor;
+}
+
+.dropdown_button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+
+  &:hover {
+    background-color: transparent;
+  }
+}
+.dropdown_button:focus {
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+
+.dropdown_menu {
+  position: absolute;
+  z-index: 10;
+  height: 100px;
+  width: 200px;
+  background-color: white;
+  box-shadow: $boxShadow;
+  border-radius: $borderRadius10;
+  margin-right: 100px;
+  padding: 10px 10px;
+}
+.dropdown_menu_option {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  border-bottom: 1px solid lightgray;
+}
+.dropdown_menu_option > button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  width: 80%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.dropdown_menu_option:hover {
+  background-color: $backgroundColor;
+  border-radius: 10px;
+  border-bottom: none;
+}
+
+.searchDropDown {
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  background-color: white;
+  margin-top: 100px;
+}
+
+.clear_button {
+  padding: 0;
+  background-color: transparent;
+  outline: none;
+  border: none;
+
+  margin-right: 10px;
+  &:focus {
+    outline: none;
+  }
+}
+.clear_icon {
+  font-weight: lighter;
+}
+//sass web-react/src/sass/header.scss web-react/src/css/header.css

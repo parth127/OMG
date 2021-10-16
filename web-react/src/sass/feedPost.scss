@@ -1,0 +1,60 @@
+$borderRadius10: 10px;
+$cardHeight: 100px;
+$cardBoxShadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+//$cardBoxShadow: 0px 5px 7px -7px rgba(0, 0, 0, 0.75);
+$postDivHeight: 50px;
+$postButtonWidth: 85%;
+$postButtonHeight: 40px;
+$postButtonPaddingLeft: 20px;
+$postButtonColor: gray;
+$postButtonFontSize: 20px;
+$postButtonBorderRadius: 20px;
+$postButtonActiveBackground: #eff2f5;
+$profilePictureWidth: 40px;
+$profilePictureHeight: 40px;
+$profilePictureBorderRadius: 50%;
+$whiteColor: white;
+
+.post_container_div {
+  width: 100%;
+  height: $cardHeight;
+  background-color: $whiteColor;
+  border: none;
+  border-radius: $borderRadius10;
+  box-shadow: $cardBoxShadow;
+  z-index: 0;
+}
+
+.post_div {
+  height: $postDivHeight;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.profile_picture {
+  width: $profilePictureWidth;
+  height: $profilePictureHeight;
+  border-radius: $profilePictureBorderRadius;
+}
+
+.post_button {
+  width: $postButtonWidth;
+  height: $postButtonHeight;
+
+  padding-left: $postButtonPaddingLeft;
+  text-align: left;
+  color: $postButtonColor;
+  font-size: $postButtonFontSize;
+  background-color: #eff2f5;
+  border-radius: $postButtonBorderRadius;
+  border: none;
+  outline: none;
+
+  &:active {
+    background-color: $postButtonActiveBackground;
+  }
+}
+
+//sass web-react/src/sass/feedPost.scss web-react/src/css/feedlistPost.module.css

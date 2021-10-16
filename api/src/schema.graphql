@@ -1,0 +1,207 @@
+union FriendPost = Post | User
+
+type User {
+  userId: ID!
+  username: String!
+  emailId: String!
+  password: String!
+  profilePicture: String
+  coverPicture: String
+  gender: String
+  dateOfBirth: String
+  bio: String
+  firstName: String
+  lastName: String
+  name: String
+  city: String
+  province: String
+  noOfFriends: Int
+    @cypher(
+      statement: """
+      MATCH (this)-[:IS_FRIENDS_WITH]->(f:User) RETURN COUNT(f)
+      """
+    )
+  noOfFriendRequest: Int
+    @cypher(
+      statement: """
+      MATCH (this)<-[:TO]-(r:FriendRequest)<-[:SENT]-(u:User) return COUNT(DISTINCT(u))
+      """
+    )
+  likedPost: [Post] @relation(name: "LIKES", direction: OUT)
+  friends: [User] @relation(name: "IS_FRIENDS_WITH", direction: IN)
+  follows: [Brand] @relation(name: "FOLLOWS", direction: OUT)
+  pendingRequest: [User] @relation(name: "REQUEST", direction: OUT)
+  pendingApproval: [User] @relation(name: "REQUEST", direction: IN)
+  posts: [Post] @relation(name: "POSTS", direction: OUT)
+  comments: [Comment] @relation(name: "COMMENTS", direction: OUT)
+  reviews: [Review] @relation(name: "WROTE", direction: OUT)
+  avgStars: Float
+    @cypher(
+      statement: "MATCH (this)-[:WROTE]->(r:Review) RETURN toFloat(avg(r.stars))"
+    )
+  numReviews: Int
+    @cypher(statement: "MATCH (this)-[:WROTE]->(r:Review) RETURN COUNT(r)")
+  recommendations(first: Int = 3): [Brand]
+    @cypher(
+      statement: "MATCH (this)-[:WROTE]->(r:Review)-[:REVIEWS]->(:Brand)<-[:REVIEWS]-(:Review)<-[:WROTE]-(:User)-[:WROTE]->(:Review)-[:REVIEWS]->(rec:Brand) WHERE NOT EXISTS( (this)-[:WROTE]->(:Review)-[:REVIEWS]->(rec) ) WITH rec, COUNT(*) AS num ORDER BY num DESC LIMIT $first RETURN rec"
+    )
+}
+
+type FriendRequest {
+  requestId: ID!
+  from: User @relation(name: "SENT", direction: IN)
+  to: User @relation(name: "TO", direction: OUT)
+  timeStamp: String
+}
+
+type Post {
+  postId: ID!
+  text: String!
+  img: String
+  media: String
+  url: String
+  date: String
+  hashtag: [String]
+  shares: Int
+  likes: Int
+  stars: Float
+  commentIsDisabled: Boolean
+  feedbackP: Int
+  feedbackN: Int
+  feedback: String
+  sentiment: Sentiment @relation(name: "HAS", direction: OUT)
+  comments: [Comment] @relation(name: "HAS", direction: IN)
+  likedBy: [User] @relation(name: "LIKES", direction: IN)
+  numComments: Int
+    @cypher(
+      statement: """
+      MATCH (this)<-[:HAS]-(c:Comment) RETURN COUNT(c)
+      """
+    )
+  user: User @relation(name: "POSTS", direction: IN)
+}
+type Brand {
+  brandId: ID!
+  name: String!
+  emailId: String!
+  password: String!
+  address: String
+  city: String
+  state: String
+  location: Point
+  followers: [User] @relation(name: "FOLLOWS", direction: IN)
+  avgStars: Float
+    @cypher(
+      statement: "MATCH (this)<-[:REVIEWS]-(r:Review) RETURN coalesce(avg(r.stars),0.0)"
+    )
+  reviews: [Review] @relation(name: "REVIEWS", direction: IN)
+  categories: [Category] @relation(name: "IN_CATEGORY", direction: OUT)
+}
+type Comment {
+  commentId: ID!
+  stars: Float
+  text: String
+  date: String
+  likes: Int
+  sentiment: Sentiment @relation(name: "HAS", direction: OUT)
+  post: Post @relation(name: "HAS", direction: OUT)
+  user: User @relation(name: "COMMENTS", direction: IN)
+}
+
+type Sentiment {
+  sentimentId: ID!
+  srcText: String
+  sentiment: [String]
+  score: Float
+  Sentences: [Sentence]
+  post: Post @relation(name: "HAS", direction: IN)
+  comment: Comment @relation(name: "HAS", direction: IN)
+  review: Review @relation(name: "HAS", direction: IN)
+}
+type Sentence {
+  text: String
+  sentiment: String
+}
+
+type Review @isAuthenticated {
+  reviewId: ID!
+  stars: Float
+  text: String
+  date: Date
+  sentiment: Sentiment @relation(name: "HAS", direction: OUT)
+  Brand: Brand @relation(name: "REVIEWS", direction: OUT)
+  user: User @relation(name: "WROTE", direction: IN)
+}
+
+type Category {
+  name: ID!
+  Brands: [Brand] @relation(name: "IN_CATEGORY", direction: IN)
+}
+
+type RatingCount {
+  stars: Float!
+  count: Int!
+}
+
+type AuthToken {
+  token: String!
+}
+
+input _UserInput {
+  userId: ID!
+}
+input _PostInput {
+  postId: ID!
+}
+
+input Upload {
+  name: String!
+  type: String!
+  size: Int
+  path: String!
+}
+
+type Mutation {
+  AddNewPost(text: String, file: Upload!, date: String!): Post @neo4j_ignore
+  signUp(username: String!, emailId: String!, password: String!): AuthToken
+    @neo4j_ignore
+  login(username: String!, password: String!): AuthToken @neo4j_ignore
+  forgotpassword(emailId: String!): AuthToken @neo4j_ignore
+  changepassword(userId: String!, password: String!): AuthToken @neo4j_ignore
+  mergeBrandCategory(categories: [String!]!, brandId: ID!): Brand
+    @cypher(
+      statement: "MATCH (b:Brand {brandId: $brandId}) UNWIND $categories AS cat MERGE (c:Category {name: cat}) MERGE (b)-[:IN_CATEGORY]->(c) RETURN b"
+    )
+}
+
+type Query {
+  userCount: Int! @cypher(statement: "MATCH (u:User) RETURN COUNT(u)")
+  me: User
+    @cypher(
+      statement: """
+      MATCH (u:User {id: $cypherParams.currentUserId})
+      RETURN u
+      """
+    )
+  ratingsCount: [RatingCount]
+    @cypher(
+      statement: "MATCH (r:Review) WITH r.stars AS stars, COUNT(*) AS count ORDER BY stars RETURN {stars: stars, count: count}"
+    )
+
+  myFriendsPost(userId: ID!): [FriendPost]
+    @cypher(
+      statement: """
+      MATCH (u:User {userId: userId})
+      CALL{
+          WITH u
+          MATCH (p:Post)<-[:POSTS]-(:User)<-[:IS_FRIENDS_WITH]-(u)
+          RETURN (p)
+          UNION
+          WITH u
+          MATCH (p:Post)<-[:POSTS]-(u)
+          RETURN (p)
+      }
+      RETURN p ORDER BY p.date DESCENDING
+      """
+    )
+}

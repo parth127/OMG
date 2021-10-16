@@ -1,0 +1,195 @@
+.post_container_div {
+  width: 100%;
+  height: auto;
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.user_info {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  margin-left: 5%;
+  padding-top: 10px;
+}
+
+.user_profile_picture {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.user_name {
+  display: flex;
+  flex-direction: column;
+}
+
+.user {
+  font-size: 20px;
+  margin-top: 2px;
+  margin-bottom: -5px;
+}
+
+.post_text {
+  width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  word-wrap: break-word;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 0;
+}
+
+.txt {
+  margin-left: 15px;
+  margin-bottom: -10px;
+}
+
+.sentiment_button_div {
+  margin-right: 28px;
+  margin-top: -5px;
+}
+
+.sentiment_button:focus {
+  outline: none;
+}
+
+.post_time {
+  font-size: 16px;
+  color: #999;
+}
+
+.feedpost {
+  width: 100%;
+  height: auto;
+  aspect-ratio: attr(width)/attr(height);
+}
+
+.response_container_div {
+  width: 90%;
+  margin-left: 5%;
+  display: flex;
+  flex-direction: row;
+  margin-top: -15px;
+}
+
+.reaction_button {
+  border: none;
+  background-color: white;
+  margin-right: 30px;
+  outline: none;
+  display: flex;
+  align-items: center;
+}
+
+.like_button {
+  background: transparent;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+}
+
+.like_count {
+  padding-top: 17px;
+  font-size: 18px;
+  color: gray;
+  font-weight: lighter;
+}
+
+.reaction_button_icon:focus {
+  outline: none;
+}
+
+.reaction_icon {
+  font-size: 30px;
+}
+
+.reaction_button_icon:hover > .MuiSvgIcon-root {
+  color: red;
+}
+
+.like_icon:hover > .MuiSvgIcon-root {
+  color: red;
+}
+
+.comment {
+  border-top: 1px solid lightgray;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.disabledComment {
+  border-top: 1px solid lightgray;
+  padding-bottom: 1px;
+  padding-top: 10px;
+  padding-left: 20px;
+  font-weight: lighter;
+  color: gray;
+}
+
+.head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.delete_button {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  margin-top: -30px;
+}
+.delete_button:focus {
+  outline: none;
+}
+
+.delete_icon {
+  font-size: 22px;
+  color: #4050b5;
+  transition: font-size 0.1s, color 0.1s;
+}
+.delete_icon:hover {
+  font-size: 25px;
+  color: #303e9c;
+}
+
+.span {
+  color: #4050b5;
+}
+
+.sentiment_chart_div {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.report_table_div {
+  margin-left: 10px;
+  width: 95%;
+  margin-bottom: 10px;
+}
+
+.report_table {
+  border: 1px solid lightgray;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.back_button_link {
+  margin-left: -20px;
+}
+
+.back_button:focus {
+  outline: none;
+}
+
+/*# sourceMappingURL=feedpost.module.css.map */

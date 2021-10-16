@@ -1,0 +1,102 @@
+$borderRadius5: 5px;
+$borderRadius10: 10px;
+$boxShadow: 0 0 10px rgb(148, 147, 147);
+$cardWidth: 450px;
+$cardHeight: 600px;
+$headingFontSize: 50px;
+$inputBorder: 0.5px solid rgb(150, 150, 150);
+$inputBorderRadius: 5px;
+$inputFontSize: 18px;
+$inputWidth: 350px;
+$inputHeight: 40px;
+$inputMarginBottom: 20px;
+$inputPaddingLeft: 15px;
+$whiteColor: white;
+$signUpButtonFontSize: 20px;
+$signUpButtonWidth: 350px;
+$signUpButtonHeight: 40px;
+$logoWidth: 90px;
+$logoHeight: 90px;
+$logoMarginTop: 30px;
+$termFontSize: 14px;
+$termFontColor: rgb(124, 124, 124);
+$themeColor: #4050b5;
+
+.button {
+  width: $signUpButtonWidth;
+  height: $signUpButtonHeight;
+  font-size: $signUpButtonFontSize;
+
+  background-color: $themeColor;
+  color: $whiteColor;
+
+  border: none;
+
+  border-radius: $borderRadius5;
+
+  &:hover {
+    background-color: #303e9c;
+  }
+}
+.card {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+
+  width: $cardWidth;
+  height: $cardHeight;
+  border-radius: $borderRadius10;
+  box-shadow: $boxShadow;
+}
+
+.heading {
+  font-size: $headingFontSize;
+  color: $themeColor;
+}
+.heading_div {
+  display: block;
+  text-align: center;
+}
+
+.input_form_div {
+  text-align: center;
+  margin-top: 70px;
+}
+.input {
+  width: $inputWidth;
+  height: $inputHeight;
+  font-size: $inputFontSize;
+  padding-left: $inputPaddingLeft;
+  margin-bottom: $inputMarginBottom;
+
+  border: $inputBorder;
+  border-radius: $inputBorderRadius;
+
+  &:focus {
+    outline-color: $themeColor;
+  }
+}
+
+.logo {
+  width: $logoWidth;
+  height: $logoHeight;
+  margin-top: $logoMarginTop;
+}
+
+.main_div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.terms {
+  text-align: left;
+  margin-left: 50px;
+  font-size: $termFontSize;
+  color: $termFontColor;
+}
+
+//sass web-react/src/sass/register.scss web-react/src/css/register.module.css

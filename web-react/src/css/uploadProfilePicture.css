@@ -1,0 +1,71 @@
+.profile_Picture {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.card {
+  position: relative;
+  align-items: center;
+  background-color: white;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0px 5px 7px -7px rgba(0, 0, 0, 0.75);
+}
+
+.head {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  justify-content: space-between;
+  border-bottom: 1px solid lightgray;
+}
+
+.bottom {
+  width: 90%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.selectImage {
+  width: 90%;
+  display: flex;
+  float: inline-start;
+  align-items: center;
+}
+.createPost_imgupload > input {
+  display: none;
+}
+.createPost_uploadbtn {
+  padding: 10px;
+  background-color: white;
+  border: none;
+}
+.createPost_uploadbtn:hover {
+  background-color: #eff2f5;
+  border-radius: 5px;
+  border: none;
+}
+.createPost_uploadbtn:focus {
+  outline: none;
+  border: none;
+}
+.previewAndButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}

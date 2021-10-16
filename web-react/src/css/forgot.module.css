@@ -1,0 +1,93 @@
+.button {
+  width: 350px;
+  height: 40px;
+  font-size: 20px;
+  margin-bottom: 20px;
+  background-color: #4050b5;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+.button:hover {
+  background-color: #303e9c;
+}
+
+.card {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 450px;
+  height: 410px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #949393;
+}
+
+.heading_div {
+  display: block;
+  text-align: center;
+}
+
+.heading {
+  margin-top: 30px;
+  font-size: 40px;
+  color: #4050b5;
+  margin-bottom: -5px;
+}
+
+.hr_line {
+  width: 369px;
+  color: #979797;
+}
+
+.input_form_div {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.input {
+  width: 350px;
+  height: 40px;
+  font-size: 18px;
+  padding-left: 15px;
+  margin-bottom: 20px;
+  border: 0.5px solid #969696;
+  border-radius: 5px;
+}
+.input:focus {
+  outline-color: #4050b5;
+}
+.input::-webkit-outer-spin-button, .input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.link_div {
+  text-align: end;
+  width: 410px;
+}
+
+.link {
+  margin-left: 2px;
+  text-decoration: none;
+  color: #4050b5;
+}
+
+.main_div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.p {
+  color: #6d6c6c;
+  font-weight: lighter;
+}
+
+.input_error_p {
+  color: transparent;
+  white-space: pre-line;
+}
+
+/*# sourceMappingURL=forgot.module.css.map */

@@ -1,0 +1,58 @@
+{
+  "name": "omg-web-react",
+  "version": "0.0.1",
+  "description": "React app for OMG Social",
+  "homepage": ".",
+  "dependencies": {
+    "@apollo/client": "^3.2.5",
+    "@azure/ai-text-analytics": "^5.1.0-beta.5",
+    "@fortawesome/fontawesome-svg-core": "^1.2.34",
+    "@fortawesome/free-brands-svg-icons": "^5.15.2",
+    "@fortawesome/free-regular-svg-icons": "^5.15.2",
+    "@fortawesome/free-solid-svg-icons": "^5.15.2",
+    "@fortawesome/react-fontawesome": "^0.1.14",
+    "@material-ui/core": "^4.10.0",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.57",
+    "apollo-link-error": "^1.1.13",
+    "apollo-upload-client": "^14.1.2",
+    "bootstrap": "^4.6.0",
+    "classnames": "^2.2.6",
+    "emailjs-com": "^2.6.4",
+    "firebase": "^8.2.10",
+    "font-awesome": "^4.7.0",
+    "graphql": "15.5.0",
+    "jsonwebtoken": "^8.5.1",
+    "jwt-decode": "^3.1.2",
+    "moment": "^2.29.1",
+    "react": "^17.0.1",
+    "react-bootstrap": "^1.4.3",
+    "react-dom": "^17.0.1",
+    "react-input-autosize": "^3.0.0",
+    "react-moment": "^1.1.1",
+    "react-reactions": "github:randomdipesh/react-reactions",
+    "react-router": "^5.1.2",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "^4.0.2",
+    "recharts": "^1.8.5",
+    "styled-components": "^5.2.1",
+    "uuid": "^8.3.2"
+  },
+  "scripts": {
+    "dev": "export NODE_TLS_REJECT_UNAUTHORIZED=0 && nuxt --env.NODE_TLS_REJECT_UNAUTHORIZED=0",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "now-build": "react-scripts build"
+  },
+  "devDependencies": {
+    "http-proxy-middleware": "^0.20.0"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

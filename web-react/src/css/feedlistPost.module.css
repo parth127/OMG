@@ -1,0 +1,41 @@
+.post_container_div {
+  width: 100%;
+  height: 100px;
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  z-index: 0;
+}
+
+.post_div {
+  height: 50px;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.profile_picture {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.post_button {
+  width: 85%;
+  height: 40px;
+  padding-left: 20px;
+  text-align: left;
+  color: gray;
+  font-size: 20px;
+  background-color: #eff2f5;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+}
+.post_button:active {
+  background-color: #eff2f5;
+}
+
+/*# sourceMappingURL=feedlistPost.module.css.map */

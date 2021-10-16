@@ -1,0 +1,84 @@
+$backgroundColor: rgba(0, 0, 0, 0.2);
+$boxShadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+$borderRadius10: 10px;
+$inputFontSize: 18px;
+$inputHeight: 40px;
+$inputPaddingLeft: 15px;
+$inputBorder: 0.5px solid rgb(150, 150, 150);
+$inputBorderRadius: 5px;
+$themeColor: #4050b5;
+
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: $backgroundColor;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+.card {
+  position: relative;
+  align-items: center;
+  background-color: white;
+  width: 100%;
+  max-width: 800px;
+  border-radius: $borderRadius10;
+  border: none;
+  box-shadow: $boxShadow;
+}
+.head {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  justify-content: space-between;
+  border-bottom: 1px solid lightgray;
+  margin-left: 5%;
+}
+.form {
+  margin-top: 10px;
+  margin-left: 5%;
+  width: 90%;
+}
+.input {
+  width: 100%;
+  height: $inputHeight;
+  font-size: $inputFontSize;
+  padding-left: $inputPaddingLeft;
+  border: $inputBorder;
+  border-radius: $inputBorderRadius;
+
+  &:focus {
+    outline-color: $themeColor;
+  }
+}
+.inputTextArea {
+  width: 100%;
+  font-size: $inputFontSize;
+  padding-left: $inputPaddingLeft;
+  border: $inputBorder;
+  border-radius: $inputBorderRadius;
+
+  &:focus {
+    outline-color: $themeColor;
+  }
+}
+.updateButton {
+  width: 100%;
+  height: $inputHeight;
+  font-size: 20px;
+  background-color: $themeColor;
+  color: white;
+  border: none;
+
+  border-radius: $inputBorderRadius;
+  &:hover {
+    background-color: #303e9c;
+  }
+}
+//sass web-react/src/sass/editProfile.scss web-react/src/css/editProfile.module.css

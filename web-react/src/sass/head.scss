@@ -1,0 +1,68 @@
+.grow {
+  flex-grow: 1;
+  position: sticky;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.search {
+  position: relative;
+  border-radius: 30px;
+  background-color: #eff2f5;
+  margin-right: 16px;
+  margin-left: 0;
+  width: 100%;
+  @media screen and (min-width: 600px) {
+    margin-left: 24px;
+    width: 'auto';
+  }
+}
+.searchIcon {
+  color: black;
+  padding: 0px 16px;
+  height: 100%;
+  position: absolute;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.inputRoot {
+  color: black;
+}
+.inputInput {
+  padding: 8px 8px 8px 0px;
+  // vertical padding + font size from searchIcon
+  padding-left: calc(1em + 32px);
+  //transition: theme.transitions.create('width');
+  width: 100%;
+  @media screen and (min-width: 600px) {
+    width: 34ch;
+  }
+}
+.sectionDesktop {
+  display: none;
+  @media screen and (min-width: 600px) {
+    display: flex;
+  }
+}
+.sectionmobile {
+  display: flex;
+  @media screen and (min-width: 600px) {
+    display: none;
+  }
+}
+.clear_button {
+  padding: 0;
+  background-color: transparent;
+  outline: none;
+  border: none;
+
+  margin-right: 10px;
+  &:focus {
+    outline: none;
+  }
+}
+
+//sass web-react/src/sass/head.scss web-react/src/css/head.css
